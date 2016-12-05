@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Historia_Intro : MonoBehaviour {
 
@@ -11,16 +12,38 @@ public class Historia_Intro : MonoBehaviour {
 	*/
 
 
+
+	public GameObject cortinilla;
+	public AudioSource SFX_Aceptar;
+
+
+	public Text texto_titulo;
+	public Text texto_descripcion;
+	public Text texto_siguiente;
+
 	// Use this for initialization
 	void Start () {
-	
+		asignarIdioma();
 	}
-	
-
 
 	public void irAMenuPrincipal(){
-		SceneManager.LoadScene("Menu_principal");
+		SFX_Aceptar.Play();
+		cortinilla.SetActive(true);
 	}
 
-	
+
+	void asignarIdioma(){
+		if(PlayerPrefs.GetString("IDIOMA")=="ESPANIOL"){
+			texto_titulo.text="HISTORIA";
+			texto_descripcion.text="Próximamente aquí habrá un comic increible que narrará la historia.";
+			texto_siguiente.text="SIGUIENTE";
+		}
+
+		else if(PlayerPrefs.GetString("IDIOMA")=="ENGLISH"){
+			texto_titulo.text="STORY";
+			texto_descripcion.text="Here will be an incredibile comic that will tell the story. Coming Soon.";
+			texto_siguiente.text="SKIP";
+		}
+	}
+
 }

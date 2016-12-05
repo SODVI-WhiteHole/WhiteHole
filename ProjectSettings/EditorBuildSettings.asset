@@ -6,6 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Escenas/seleccion_idioma.unity
+  - enabled: 1
     path: Assets/Escenas/intro.unity
   - enabled: 1
     path: Assets/Escenas/Historia_introductoria.unity
