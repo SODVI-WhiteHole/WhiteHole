@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class carrusel : MonoBehaviour {
 
 	/*
+	*Programado por José.
 	Este código sirve para el carrusel del menú principal.
 	Captura las teclas y ajusta el menú al estado que le corresponde.
 	También ejecuta la acción que fue seleccionada.
@@ -36,6 +37,16 @@ public class carrusel : MonoBehaviour {
 
 
 	public int estado=1;
+
+
+	public GameObject icono;
+
+	public Sprite icono_NuevoJuego;
+	public Sprite icono_Continuar;
+	public Sprite icono_Opciones;
+	public Sprite icono_Creditos;
+	public Sprite icono_Salir;
+
 
 	Vector3 primerTamanio=new Vector3(1.0f,1.0f,1.0f);
 	Vector3 segundoTamanio=new Vector3(0.8f,0.8f,1.0f);
@@ -89,7 +100,6 @@ public class carrusel : MonoBehaviour {
 
 
 	void seleccionarEstado(){
-		print("Nuevo Estado");
 
 		switch(estado){
 
@@ -126,15 +136,11 @@ public class carrusel : MonoBehaviour {
 
 	void estado_NuevoJuego(){
 
-
 		Salir.GetComponent<RectTransform>().localScale=tercerTamanio;
 		Creditos.GetComponent<RectTransform>().localScale=segundoTamanio;
 		Nuevo_Juego.GetComponent<RectTransform>().localScale=primerTamanio;
 		Continuar.GetComponent<RectTransform>().localScale=segundoTamanio;
 		Opciones.GetComponent<RectTransform>().localScale=tercerTamanio;
-
-
-
 
 
 		Salir.GetComponent<RectTransform>().localPosition=posicionTerciaria;
@@ -151,7 +157,6 @@ public class carrusel : MonoBehaviour {
 		Texto_Opciones.GetComponent<Text>().color=alfaTerciario;
 
 
-
 		Salir.GetComponent<Image>().color=alfaTerciarioB;
 		Creditos.GetComponent<Image>().color=alfaSecundarioB;
 		Nuevo_Juego.GetComponent<Image>().color=alfaCentralB;
@@ -159,18 +164,15 @@ public class carrusel : MonoBehaviour {
 		Opciones.GetComponent<Image>().color=alfaTerciarioB;
 
 
-
-
-
 		brillo_NuevoJuego.SetActive(true);
 		brillo_Continuar.SetActive(false);
 		brillo_Creditos.SetActive(false);
 
 
-
-		print("Estado 1");
-
+		icono.GetComponent<Image>().sprite=icono_NuevoJuego;
 	}
+
+
 
 	void estado_Continuar(){
 
@@ -181,15 +183,11 @@ public class carrusel : MonoBehaviour {
 		Salir.GetComponent<RectTransform>().localScale=tercerTamanio;
 
 
-
 		Creditos.GetComponent<RectTransform>().localPosition=posicionTerciaria;
 		Nuevo_Juego.GetComponent<RectTransform>().localPosition=posicionSecundaria;
 		Continuar.GetComponent<RectTransform>().localPosition=posicionCentral;
 		Opciones.GetComponent<RectTransform>().localPosition=posicionSecundariaBaja;
 		Salir.GetComponent<RectTransform>().localPosition=posicionTerciariaBaja;
-
-
-
 
 
 		Texto_Creditos.GetComponent<Text>().color=alfaTerciario;
@@ -199,7 +197,6 @@ public class carrusel : MonoBehaviour {
 		Texto_Salir.GetComponent<Text>().color=alfaTerciario;
 
 
-
 		Creditos.GetComponent<Image>().color=alfaTerciarioB;
 		Nuevo_Juego.GetComponent<Image>().color=alfaSecundarioB;
 		Continuar.GetComponent<Image>().color=alfaCentralB;
@@ -207,17 +204,15 @@ public class carrusel : MonoBehaviour {
 		Salir.GetComponent<Image>().color=alfaTerciarioB;
 
 
-
-
 		brillo_NuevoJuego.SetActive(false);
 		brillo_Continuar.SetActive(true);
 		brillo_Opciones.SetActive(false);
 
 
-
-
-		print("Estado 2");
+		icono.GetComponent<Image>().sprite=icono_Continuar;
 	}
+
+
 
 	void estado_Opciones(){
 
@@ -228,14 +223,11 @@ public class carrusel : MonoBehaviour {
 		Creditos.GetComponent<RectTransform>().localScale=tercerTamanio;
 
 
-
 		Nuevo_Juego.GetComponent<RectTransform>().localPosition=posicionTerciaria;
 		Continuar.GetComponent<RectTransform>().localPosition=posicionSecundaria;
 		Opciones.GetComponent<RectTransform>().localPosition=posicionCentral;
 		Salir.GetComponent<RectTransform>().localPosition=posicionSecundariaBaja;
 		Creditos.GetComponent<RectTransform>().localPosition=posicionTerciariaBaja;
-
-
 
 
 		Texto_Nuevo_Juego.GetComponent<Text>().color=alfaTerciario;
@@ -252,16 +244,12 @@ public class carrusel : MonoBehaviour {
 		Creditos.GetComponent<Image>().color=alfaTerciarioB;
 
 
-
-
 		brillo_Continuar.SetActive(false);
 		brillo_Opciones.SetActive(true);
 		brillo_Salir.SetActive(false);
 
 
-
-
-		print("Estado 3");
+		icono.GetComponent<Image>().sprite=icono_Opciones;
 	}
 
 
@@ -281,15 +269,11 @@ public class carrusel : MonoBehaviour {
 		Nuevo_Juego.GetComponent<RectTransform>().localPosition=posicionTerciariaBaja;
 
 
-
-
-
 		Texto_Continuar.GetComponent<Text>().color=alfaTerciario;
 		Texto_Opciones.GetComponent<Text>().color=alfaSecundario;
 		Texto_Salir.GetComponent<Text>().color=alfaCentral;
 		Texto_Creditos.GetComponent<Text>().color=alfaSecundario;
 		Texto_Nuevo_Juego.GetComponent<Text>().color=alfaTerciario;
-
 
 
 		Continuar.GetComponent<Image>().color=alfaTerciarioB;
@@ -299,15 +283,15 @@ public class carrusel : MonoBehaviour {
 		Nuevo_Juego.GetComponent<Image>().color=alfaTerciarioB;
 
 
-
 		brillo_Opciones.SetActive(false);
 		brillo_Creditos.SetActive(false);
 		brillo_Salir.SetActive(true);
 
 
-
-		print("Estado 4");
+		icono.GetComponent<Image>().sprite=icono_Salir;
 	}
+
+
 
 	void estado_Creditos(){
 
@@ -318,7 +302,6 @@ public class carrusel : MonoBehaviour {
 		Continuar.GetComponent<RectTransform>().localScale=tercerTamanio;
 
 
-
 		Opciones.GetComponent<RectTransform>().localPosition=posicionTerciaria;
 		Salir.GetComponent<RectTransform>().localPosition=posicionSecundaria;
 		Creditos.GetComponent<RectTransform>().localPosition=posicionCentral;
@@ -326,14 +309,11 @@ public class carrusel : MonoBehaviour {
 		Continuar.GetComponent<RectTransform>().localPosition=posicionTerciariaBaja;
 
 
-
-
 		Texto_Opciones.GetComponent<Text>().color=alfaTerciario;
 		Texto_Salir.GetComponent<Text>().color=alfaSecundario;
 		Texto_Creditos.GetComponent<Text>().color=alfaCentral;
 		Texto_Nuevo_Juego.GetComponent<Text>().color=alfaSecundario;
 		Texto_Continuar.GetComponent<Text>().color=alfaTerciario;
-
 
 
 		Opciones.GetComponent<Image>().color=alfaTerciarioB;
@@ -348,7 +328,8 @@ public class carrusel : MonoBehaviour {
 		brillo_Salir.SetActive(false);
 
 
-
-		print("Estado 5");
+		icono.GetComponent<Image>().sprite=icono_Creditos;
 	}
+
+
 }
