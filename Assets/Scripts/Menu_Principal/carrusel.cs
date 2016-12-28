@@ -12,6 +12,12 @@ public class carrusel : MonoBehaviour {
 	*/
 
 	public AudioSource SFX_navegacion;
+	public AudioSource SFX_aceptar;
+	public AudioSource SFX_Incorrecto;
+	public AudioSource SFX_Comenzar;
+
+	public Animator animadorMenu;
+
 
 	public GameObject Nuevo_Juego;
 	public GameObject Continuar;
@@ -68,38 +74,54 @@ public class carrusel : MonoBehaviour {
 	Vector3 posicionSecundariaBaja=new Vector3 (-20.0f,-80.0f,0.0f);
 	Vector3 posicionTerciariaBaja=new Vector3 (-40.0f,-160.0f,0.0f);
 
+	public GameObject cortinilla;
+
+	public bool permisoDeMover=true;
 
 
 	// Use this for initialization
 	void Start () {
-		seleccionarEstado();
+		colocarEstado();
 	}
-	
+
+
 	// Update is called once per frame
 	void Update () {
-	
+		if(permisoDeMover){
+			capturarTeclas();
+		}
+	}
+
+
+
+	void capturarTeclas(){
 		if(Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.LeftArrow)||Input.GetKeyDown(KeyCode.UpArrow)){
 			SFX_navegacion.Play();
 			estado--;
 			if (estado<=0){
 				estado=5;
 			}
-			seleccionarEstado();
+			colocarEstado();
 		}
-
-
+			
 		if(Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.DownArrow)||Input.GetKeyDown(KeyCode.RightArrow)||Input.GetKeyDown(KeyCode.D)){
 			SFX_navegacion.Play();
 			estado++;
 			if (estado>=6){
 				estado=1;
 			}
+			colocarEstado();
+		}
+			
+		if(Input.GetKeyDown(KeyCode.Return)){
 			seleccionarEstado();
 		}
 	}
 
 
-	void seleccionarEstado(){
+
+
+	void colocarEstado(){
 
 		switch(estado){
 
@@ -131,6 +153,50 @@ public class carrusel : MonoBehaviour {
 		}
 
 	}
+
+
+
+
+	void seleccionarEstado(){
+		switch(estado){
+
+		case 1:
+			cortinilla.SetActive(true);
+			SFX_Comenzar.Play();
+			animadorMenu.SetTrigger("irAJuego");
+			break;
+
+		case 2:
+			SFX_Incorrecto.Play();
+			break;
+
+		case 3:
+			SFX_aceptar.Play();
+			animadorMenu.SetTrigger("colocarOpciones");
+			break;
+
+
+		case 4:
+			SFX_Incorrecto.Play();
+			break;
+
+
+		case 5:
+			SFX_aceptar.Play();
+			animadorMenu.SetTrigger("colocarCreditos");
+			break;	
+
+		default:
+			print("Algo salio terriblemente mal. Estado = "+estado);
+			break;
+		}
+	}
+
+
+
+
+
+
 
 
 
@@ -173,7 +239,6 @@ public class carrusel : MonoBehaviour {
 	}
 
 
-
 	void estado_Continuar(){
 
 		Creditos.GetComponent<RectTransform>().localScale=tercerTamanio;
@@ -211,8 +276,7 @@ public class carrusel : MonoBehaviour {
 
 		icono.GetComponent<Image>().sprite=icono_Continuar;
 	}
-
-
+		
 
 	void estado_Opciones(){
 
@@ -253,7 +317,6 @@ public class carrusel : MonoBehaviour {
 	}
 
 
-
 	void estado_Salir(){
 		Continuar.GetComponent<RectTransform>().localScale=tercerTamanio;
 		Opciones.GetComponent<RectTransform>().localScale=segundoTamanio;
@@ -290,7 +353,6 @@ public class carrusel : MonoBehaviour {
 
 		icono.GetComponent<Image>().sprite=icono_Salir;
 	}
-
 
 
 	void estado_Creditos(){

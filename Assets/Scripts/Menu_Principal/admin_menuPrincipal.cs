@@ -4,6 +4,10 @@ using UnityEngine.UI;
 
 public class admin_menuPrincipal : MonoBehaviour {
 
+	/*Programado por José.
+	 * Este código es el administrador general del menu principal.
+	 * Dice en que momento debe aparecer el titulo, el carrusel, el menu de opciones y la pantalla de créditos.
+	*/
 
 	public string fase="";
 
@@ -19,11 +23,12 @@ public class admin_menuPrincipal : MonoBehaviour {
 	public GameObject PressEnter;
 	public Text SODVI;
 
+	Animator animadorMenu;
 
 	// Use this for initialization
 	void Start () {
 		fase="Abriendo";
-
+		animadorMenu=this.gameObject.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -83,6 +88,7 @@ public class admin_menuPrincipal : MonoBehaviour {
 		if(Titulo.color.a<=0.0f){
 			seccionInicio.SetActive(false);
 			fase="Espera";
+			animadorMenu.SetTrigger("colocarCarrusel");
 		}
 	}
 
