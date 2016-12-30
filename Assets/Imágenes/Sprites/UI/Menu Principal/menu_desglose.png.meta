@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 79f82b2dec6ac8b49bf92a5ba6a43110
-timeCreated: 1480302422
+timeCreated: 1483121092
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -9,6 +9,11 @@ TextureImporter:
     21300004: menu_desglose_63
     21300006: menu_desglose_78
     21300008: menu_desglose_91
+    21300010: menu_desglose_83
+    21300012: menu_desglose_90
+    21300014: menu_desglose_92
+    21300016: menu_desglose_93
+    21300018: menu_desglose_0
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -62,8 +67,8 @@ TextureImporter:
         y: 1479
         width: 381
         height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: menu_desglose_50
@@ -74,7 +79,7 @@ TextureImporter:
         width: 382
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: menu_desglose_63
@@ -85,21 +90,54 @@ TextureImporter:
         width: 382
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
     - name: menu_desglose_78
       rect:
         serializedVersion: 2
         x: 428
-        y: 1335
+        y: 1340
         width: 243
-        height: 28
+        height: 19
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-    - name: menu_desglose_91
+    - name: menu_desglose_83
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1295
+        width: 229
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: menu_desglose_90
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 1219
+        width: 4
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: menu_desglose_92
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1245
+        width: 382
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: menu_desglose_93
       rect:
         serializedVersion: 2
         x: 2
@@ -107,7 +145,7 @@ TextureImporter:
         width: 1896
         height: 1179
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
       - - {x: 96, y: -588.5}
@@ -657,6 +695,17 @@ TextureImporter:
         - {x: -79, y: -589.5}
         - {x: 79, y: -589.5}
         - {x: 80, y: -588.5}
+    - name: menu_desglose_0
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1508
+        width: 381
+        height: 15
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
     outline: []
   spritePackingTag: 
   userData: 

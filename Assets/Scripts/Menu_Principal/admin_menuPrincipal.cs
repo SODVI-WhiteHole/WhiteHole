@@ -25,8 +25,47 @@ public class admin_menuPrincipal : MonoBehaviour {
 
 	Animator animadorMenu;
 
+
+
+	public Text texto_presionaStart;
+
+	public Text texto_nuevoJuego;
+	public Text texto_nuevoJuegoBrillo;
+
+	public Text texto_continuar;
+	public Text texto_continuarBrillo;
+
+	public Text texto_opciones;
+	public Text texto_opcionesBrillo;
+
+	public Text texto_creditos;
+	public Text texto_creditosBrillo;
+
+	public Text texto_salir;
+	public Text texto_salirBrillo;
+
+
+	public Text texto_tituloOpciones;
+
+	public Text texto_idioma;
+	public Text texto_seleccionIdioma;
+
+	public Text texto_musica;
+	public Text texto_sonido;
+	public Text texto_regresar;
+
+
+	public Text texto_tituloCreditos;
+	public Text texto_arte;
+
+	public Text texto_programacion;
+	public Text texto_regresarDeCreditos;
+
+
+
 	// Use this for initialization
 	void Start () {
+		actualizarIdioma();
 		fase="Abriendo";
 		animadorMenu=this.gameObject.GetComponent<Animator>();
 	}
@@ -91,6 +130,91 @@ public class admin_menuPrincipal : MonoBehaviour {
 			animadorMenu.SetTrigger("colocarCarrusel");
 		}
 	}
+
+
+
+	public void actualizarIdioma(){
+		if(PlayerPrefs.GetString("IDIOMA")=="ESPANIOL"){
+
+			texto_presionaStart.text="PRESIONA ENTER";
+
+			texto_nuevoJuego.text="Juego Nuevo";
+			texto_nuevoJuegoBrillo.text="Juego Nuevo";
+
+			texto_continuar.text="Continuar";
+			texto_continuarBrillo.text="Continuar";
+
+			texto_opciones.text="Opciones";
+			texto_opcionesBrillo.text="Opciones";
+
+			texto_creditos.text="Créditos";
+			texto_creditosBrillo.text="Créditos";
+
+			texto_salir.text="Salir";
+			texto_salirBrillo.text="Salir";
+
+			texto_tituloOpciones.text="OPCIONES";
+
+			texto_idioma.text="Idioma";
+			texto_seleccionIdioma.text="ESPAÑOL";
+
+			texto_musica.text="Música";
+			texto_sonido.text="Sonido";
+			texto_regresar.text="REGRESAR";
+
+
+			texto_tituloCreditos.text="Creditos";
+			texto_arte.text="Arte Visual";
+
+			texto_programacion.text="Programación";
+			texto_regresarDeCreditos.text="REGRESAR";
+
+
+			
+		}	
+		else if(PlayerPrefs.GetString("IDIOMA")=="ENGLISH"){
+
+
+			texto_presionaStart.text="PRESS ENTER";
+
+			texto_nuevoJuego.text="New Game";
+			texto_nuevoJuegoBrillo.text="New Game";
+
+			texto_continuar.text="Continue";
+			texto_continuarBrillo.text="Continue";
+
+			texto_opciones.text="Options";
+			texto_opcionesBrillo.text="Options";
+
+			texto_creditos.text="Credits";
+			texto_creditosBrillo.text="Credits";
+
+			texto_salir.text="Exit";
+			texto_salirBrillo.text="Exit";
+
+			texto_tituloOpciones.text="OPTIONS";
+
+			texto_idioma.text="Language";
+			texto_seleccionIdioma.text="ENGLISH";
+
+			texto_musica.text="Music";
+			texto_sonido.text="Sound";
+			texto_regresar.text="RETURN";
+
+
+			texto_tituloCreditos.text="CREDITS";
+			texto_arte.text="Visual Art";
+
+			texto_programacion.text="Programming";
+			texto_regresarDeCreditos.text="RETURN";
+
+
+
+		}
+	
+		
+	}
+
 
 
 }
