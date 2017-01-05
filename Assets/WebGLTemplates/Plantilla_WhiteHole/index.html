@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-us">
+
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>White Hole</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="TemplateData/estilo.css">
+    <script src="TemplateData/carga.js" charset="utf-8"></script>
+  </head>
+
+
+  <body>
+
+    <div class="template-wrap clear">
+      <!-- Dimensiones recomendadas: 600px X 960px-->
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="%UNITY_HEIGHT%px" width="%UNITY_WIDTH%px" ></canvas>
+    </div>
+
+    <div id="loadingBox">
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+        <div id="gifJiratorio"><img id="spinner" src="TemplateData/loading.gif" style="margin: 0 auto" /></div>
+        <br><br>
+        <div id="bgBar"></div>
+        <div id="progressBar"></div>
+        <br><br>
+        <p id="loadingInfo">Loading...</p>
+    </div>
+
+
+    %UNITY_WEBGL_LOADER_GLUE%
+
+  </body>
+
+
+
+
+</html>

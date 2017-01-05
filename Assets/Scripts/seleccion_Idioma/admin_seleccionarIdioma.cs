@@ -25,6 +25,8 @@ public class admin_seleccionarIdioma : MonoBehaviour {
 	public AudioSource SFX_Seleccionar;
 	public AudioSource SFX_Aceptar;
 
+	public Animator animacionSI;
+
 	string idiomaActual="English";
 
 	bool activo=true;
@@ -147,5 +149,16 @@ public class admin_seleccionarIdioma : MonoBehaviour {
 		}
 
 	}
+
+
+
+
+	public void irASeleccionDeIdioma(){
+		animacionSI.SetTrigger("ir");
+	}
+
+
+
+
 
 }
