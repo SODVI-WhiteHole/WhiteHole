@@ -74,7 +74,10 @@ public class carrusel : MonoBehaviour {
 	Vector3 posicionSecundariaBaja=new Vector3 (-20.0f,-80.0f,0.0f);
 	Vector3 posicionTerciariaBaja=new Vector3 (-40.0f,-160.0f,0.0f);
 
+	public menu_Opciones codigoOpciones;
+
 	public GameObject cortinilla;
+	public GameObject objetoAudio;
 
 	public bool permisoDeMover=true;
 
@@ -164,6 +167,7 @@ public class carrusel : MonoBehaviour {
 			cortinilla.SetActive(true);
 			SFX_Comenzar.Play();
 			animadorMenu.SetTrigger("irAJuego");
+			objetoAudio.GetComponent<desvanecerMusica>().desvanecer=true;
 			break;
 
 		case 2:
@@ -172,6 +176,8 @@ public class carrusel : MonoBehaviour {
 
 		case 3:
 			SFX_aceptar.Play();
+			codigoOpciones.estado=1;
+			codigoOpciones.colocarEstado();
 			animadorMenu.SetTrigger("colocarOpciones");
 			break;
 

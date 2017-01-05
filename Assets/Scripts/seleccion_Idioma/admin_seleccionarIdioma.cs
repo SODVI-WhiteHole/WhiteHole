@@ -25,6 +25,8 @@ public class admin_seleccionarIdioma : MonoBehaviour {
 	public AudioSource SFX_Seleccionar;
 	public AudioSource SFX_Aceptar;
 
+	public Animator animacionSI;
+
 	string idiomaActual="English";
 
 	bool activo=true;
@@ -99,6 +101,10 @@ public class admin_seleccionarIdioma : MonoBehaviour {
 			}
 
 			PlayerPrefs.SetString("IDIOMA",idiomaActual);
+
+			PlayerPrefs.SetFloat("VOLUMEN_MUSICA",1.0f);
+			PlayerPrefs.SetFloat("VOLUMEN_SFX",1.0f);
+
 			print("El idioma actual es: "+PlayerPrefs.GetString("IDIOMA"));
 
 			cortinilla.SetActive(true);
@@ -143,5 +149,16 @@ public class admin_seleccionarIdioma : MonoBehaviour {
 		}
 
 	}
+
+
+
+
+	public void irASeleccionDeIdioma(){
+		animacionSI.SetTrigger("ir");
+	}
+
+
+
+
 
 }
